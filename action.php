@@ -2,6 +2,6 @@
 
 //action.php
 
-include '../database_connection.php';
+include 'database_connection.php';
 
 ?>
