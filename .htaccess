@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteRule ^daily-period-log$ daily-period-log.php [NC,L]
+
+RewriteRule ^dashboard$ admin/index.php [NC,L]
+
+RewriteRule ^logout$ admin/logout.php [NC,L]
+
+RewriteRule ^dashboard/periodcount$ admin/periodcount.php [NC,L]
+
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+
+
+Options -Indexes
+

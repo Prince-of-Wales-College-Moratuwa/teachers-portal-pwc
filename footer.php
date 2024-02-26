@@ -5,15 +5,13 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Links</h4>
-                    <a class="btn btn-link" href="/publications">Publications</a>
-                    <a class="btn btn-link" href="/history">History</a>
-                    <a class="btn btn-link" href="/about">About Us</a>
-                    <a class="btn btn-link" href="/contact">Contact Us</a>
+                    <a class="btn btn-link" href="https://princeofwales.edu.lk/" target="_blank">Main Website</a>
+                    
                 </div>
                 <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Legal</h4>
-                    <a class="btn btn-link" href="/privacy">Privacy Policy</a>
-                    <a class="btn btn-link" href="/cookies">Cookies Policy</a>
+                    <a class="btn btn-link" href="https://princeofwales.edu.lk/privacy">Privacy Policy</a>
+                    <a class="btn btn-link" href="https://princeofwales.edu.lk/cookies">Cookies Policy</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <left><h4 class="text-white mb-3">Contact</h4></left>
@@ -33,7 +31,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-12 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <?php echo date("Y"); ?> <a class="border-bottom" href="https://princeofwales.edu.lk/">Prince of Wales' College</a>, &nbsp; All Right Reserved. │ Developed By <a class="border-bottom" href="/team">Cambrians' ICT Society</a> │ Media Partner: <a class="border-bottom" href="https://princeofwales.edu.lk/cmbu/" target="_blank">Cambrians' Media and Broadcating Unit</a>
+                        &copy; <?php echo date("Y"); ?> <a class="border-bottom" href="https://princeofwales.edu.lk/">Prince of Wales' College</a>, &nbsp; All Right Reserved. │ Developed By <a class="border-bottom" href="https://princeofwales.edu.lk/team">Cambrians' ICT Society</a> │ Media Partner: <a class="border-bottom" href="https://princeofwales.edu.lk/cmbu/" target="_blank">Cambrians' Media and Broadcating Unit</a>
                     </div>
                     
                 </div>

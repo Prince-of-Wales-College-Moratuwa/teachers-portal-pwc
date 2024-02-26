@@ -1,71 +1,9 @@
 {
-    "name": "Prince of Wales' College, Moratuwa",
-    "short_name": "Prince of Wales College",
+    "name": "Teachers' Portal - Prince of Wales' College",
+    "short_name": "Teachers' Portal PWC",
     "version": "1.5",
     "description": "The official Website of Prince of Wales' College, Moratuwa",
     "start_url": "/",
-    "shortcuts": [
-    {
-      "name": "Search",
-      "short_name": "Search",
-      "url": "/search",
-      "icons": [
-        {
-          "src": "content/icons/pwa-shortcuts/search.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Blog",
-      "short_name": "Blog",
-      "url": "/blog/",
-      "icons": [
-        {
-          "src": "content/icons/pwa-shortcuts/news.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Events",
-      "short_name": "Events",
-      "url": "/events/",
-      "icons": [
-        {
-          "src": "content/icons/pwa-shortcuts/event.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "About",
-      "short_name": "About",
-      "url": "/about",
-      "icons": [
-        {
-          "src": "content/icons/pwa-shortcuts/about.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "url": "/contact",
-      "icons": [
-        {
-          "src": "content/icons/pwa-shortcuts/contact.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    }
-  ],
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#800000",
@@ -91,11 +29,7 @@
         "type": "image/png"
       }
     ],
-    "permissions": [
-      "notifications" 
-    ],
     "scope": "/",
-    "orientation": "any",
-    "prefer_related_applications": true
+    "orientation": "any"
   }
   
