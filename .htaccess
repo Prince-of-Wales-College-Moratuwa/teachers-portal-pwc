@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteRule ^daily-period-log$ daily-period-log.php [NC,L]
+RewriteRule ^project-8n-kiiyada$ project-8n-kiiyada.php [NC,L]
 
 RewriteRule ^dashboard$ admin/index.php [NC,L]
 

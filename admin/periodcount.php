@@ -4,89 +4,94 @@ $page = 'periodcount';
 
 include '../database_connection.php';
 
-include './admin-functions.php';
 include '../functions.php';
-
 
 if(!is_admin_login())
 {
-	header('location:../admin_login.php');
+	header('location:../index.php');
 	exit();
 }
+
 
 include 'admin-header.php';
 
 ?>
 
-<div class="container-fluid py-4" style="min-height: 700px;">
-	<h1>Project "8න් කීයද?"</h1>
 
-	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
-		<li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-		<li class="breadcrumb-item active">Period Count</li>
-	</ol>
-
-	<div class="card mb-4">
-		<div class="card-header">
-			<div class="row">
-				<div class="col col-md-6">
-					<i class="fas fa-table me-1"></i> Period Count
-				</div>
-			
-			</div>
-		</div>
-		<div class="card-body">
-			<table id="datatablesSimple">
-				<thead>
-					<tr>
-						<th>Grade</th>
-						<th></th>
-					</tr>
-				</thead>
-
-				<tbody>
-
-					<?php 
-
-		$query = "SELECT * FROM period_log";
-
-		$statement = $connect->prepare($query);
-
-		$statement->execute();
-
-		if($statement->rowCount() > 0)
-		{
-			foreach($statement->fetchAll() as $row)
-			{ 
-				?>
-					<tr>
-						<td>Grade <?php echo($row["id"]) ?></td>
-
-
-						<td>
-						
-							<a  href="../admin/periodcount_edit.php?id=<?php echo $row["id"]; ?>" class="btn btn-sm btn-primary">Edit</a>
-							
-						</td>
-					</tr>
-
-
-
-					<?php 
-					}
-		}	
-
-
-?>
-
-
-				</tbody>
-			</table>
-		</div>
+<div class="container-fluid py-4">
+	<div class="dropdown">
+		<h1 class="mb-5">Project "8න් කීයද?"</h1>
 	</div>
+
+	<div class="container">
+    <div class="row">
+        <?php
+        $grades = ['6', '7', '8', '9', '10', '11'];
+        $classes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+        foreach ($grades as $grade) {
+        ?>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#classModal<?= str_replace(' ', '', $grade) ?>">
+                        Grade <?= $grade ?>
+                    </button>
+                </div>
+            </div>
+			
+            <div class="modal fade" id="classModal<?= str_replace(' ', '', $grade) ?>" tabindex="-1" role="dialog" aria-labelledby="classModalLabel<?= str_replace(' ', '', $grade) ?>" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="classModalLabel<?= str_replace(' ', '', $grade) ?>">Select Class for <?= $grade ?></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <select id="classSelect<?= str_replace(' ', '', $grade) ?>" class="form-control">
+                                <?php
+                                foreach ($classes as $class) {
+                                    $classValue = str_replace(' ', '', $grade) . '-' . $class;
+                                ?>
+                                    <option value="<?= $classValue ?>"><?= $classValue ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="redirectToClass('<?= str_replace(' ', '', $grade) ?>')">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
+</div>
+
+<script>
+    function redirectToClass(grade) {
+        var selectedClass = document.getElementById("classSelect" + grade).value;
+        window.location.href = "/admin/periodcount-day.php?class=" + selectedClass;
+    }
+</script>
+
+
 
 </div>
 
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <?php
+
 include 'admin-footer.php';
+
 ?>
