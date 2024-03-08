@@ -50,25 +50,26 @@ $class = $_GET['class'];
 
 	
 				<tr>
-    <td>Monday <?php echo date('d F'); ?></td>
-	<td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=mon" class="btn btn-sm btn-primary">Edit</a></td>
+				<td>Monday <?php echo date('d F', strtotime('next Monday')); ?></td>
+<td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=mon" class="btn btn-sm btn-primary">Edit</a></td>
 </tr>
 <tr>
-    <td>Tuesday <?php echo date('d F', strtotime('+1 day')); ?></td>
+    <td>Tuesday <?php echo date('d F', strtotime('next Tuesday')); ?></td>
     <td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=tue" class="btn btn-sm btn-primary">Edit</a></td>
 </tr>
 <tr>
-    <td>Wednesday <?php echo date('d F', strtotime('+2 days')); ?></td>
+    <td>Wednesday <?php echo date('d F', strtotime('next Wednesday')); ?></td>
     <td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=wed" class="btn btn-sm btn-primary">Edit</a></td>
 </tr>
 <tr>
-    <td>Thursday <?php echo date('d F', strtotime('+3 days')); ?></td>
+    <td>Thursday <?php echo date('d F', strtotime('next Thursday')); ?></td>
     <td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=thu" class="btn btn-sm btn-primary">Edit</a></td>
 </tr>
 <tr>
-    <td>Friday <?php echo date('d F', strtotime('+4 days')); ?></td>
+    <td>Friday <?php echo date('d F', strtotime('next Friday')); ?></td>
     <td><a href="../admin/periodcount_edit.php?class=<?php echo $class; ?>&day=fri" class="btn btn-sm btn-primary">Edit</a></td>
 </tr>
+
 
 
 

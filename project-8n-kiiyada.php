@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Project "8න් කීයද?"</title>
+    <title>Project 8න් කීයද?</title>
 
     <?php include 'header.php';
     
@@ -19,13 +19,10 @@ $class = $_GET['class'];
 
 include 'database_connection.php';
 
-// Check if the user visited the page on Monday
 $current_day = date('D');
 if ($current_day === 'Mon') {
-    // Get the class from the URL parameter
     $class = $_GET['class'];
 
-    // Delete data from Tuesday to Friday for the specified class
     $query = "UPDATE period_log_g6 SET tue = NULL, wed = NULL, thu = NULL, fri = NULL WHERE class = :class";
     $statement = $connect->prepare($query);
     $statement->bindParam(':class', $class);
@@ -144,13 +141,19 @@ if ($statement->rowCount() > 0) {
             </div>
 
 
-            <ul class="mb-2">
-                <li class="mb-2">නියමිත ගුරු භවතා පැමිණ තිබේනම් - ✓</li>
-                <li class="mb-2">සහන කාලසටහනට ගුරුභවතෙකු පැමිණ තිබේනම් - 0</li>
-                <li class="mb-2">ඒ අනුව වැඩ කළ කාලච්ඡෙද එකතුව - ✓ + 0</li>
-                <li class="mb-2">කිසිඳු ගුරුභ්වතෙකු නොපැමිණි කාලච්ඡේද - ✗</li>
-            </ul>
+            <ul class="mb-2" style="font-size: 16px;">
+    <li class="mb-2" style="font-size: inherit;">නියමිත ගුරු භවතා පැමිණ තිබේනම් - ✓</li>
+    <li class="mb-2" style="font-size: inherit;">සහන කාලසටහනට ගුරුභවතෙකු පැමිණ තිබේනම් - 0</li>
+    <li class="mb-2" style="font-size: inherit;">ඒ අනුව වැඩ කළ කාලච්ඡෙද එකතුව - ✓ + 0</li>
+    <li class="mb-2" style="font-size: inherit;">කිසිඳු ගුරුභවතෙකු නොපැමිණි කාලච්ඡේද - ✗</li>
+</ul>
 
+<br>
+
+<?php
+$classNumber = preg_replace('/[^0-9]/', '', $class);
+?>
+<a class="btn btn-primary py-3 px-5 mt-2 wow zoomIn" href="project-8n-kiiyada-weeksum.php?grade=<?php echo $classNumber; ?>" data-wow-delay="0.7s">View Week Summary</a>
 
             <!-- <div class="container mt-5">
                 <ul class="nav nav-tabs nav-fill" id="scheduleTabs" role="tablist">
