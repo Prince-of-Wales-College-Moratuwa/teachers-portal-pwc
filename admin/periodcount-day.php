@@ -29,14 +29,57 @@ $class = $_GET['class'];
 	</ol>
 
 	<div class="card mb-4">
-		<div class="card-header">
-			<div class="row">
-				<div class="col col-md-6">
-					<i class="fas fa-table me-1"></i> Period Count
-				</div>
-			
-			</div>
-		</div>
+	<div class="card-header">
+    <div class="row">
+        <div class="col col-md-6">
+            <i class="fas fa-table me-1"></i> Period Count
+        </div>
+		<div class="col col-md-6 text-end">
+            <form method="post">
+                <input type="submit" class="btn btn-danger" name="deletePastWeekRecord" value="Delete Past Week Record">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<?php
+include '../database_connection.php';
+
+if(isset($_POST['deletePastWeekRecord'])) {
+    $classValue = $_GET['class']; 
+
+    try {
+        // Prepare the SQL query
+        $sql = "UPDATE period_log_g6 
+		SET mon = NULL,
+		    tue = NULL,
+		    wed = NULL,
+		    thu = NULL,
+		    fri = NULL
+		WHERE class = :class;		
+		";
+
+        $stmt = $connect->prepare($sql);
+
+        $stmt->bindParam(":class", $classValue);
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            echo "Past week records deleted successfully.";
+        } else {
+            echo "Error deleting past week records.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+
+
+
+
 		<div class="card-body">
 			<table id="datatablesSimple">
 				<thead>
