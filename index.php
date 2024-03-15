@@ -1,134 +1,127 @@
 <?php
 
-//admin_login.php
-
+// admin_login.php
 
 include 'database_connection.php';
-
 include 'functions.php';
-
 
 $message = '';
 
-if(isset($_POST["login_button"]))
-{
+if (isset($_POST["login_button"])) {
 
-	$formdata = array();
+    $formdata = array();
 
-	if(empty($_POST["admin_email"]))
-	{
-		$message .= '<li>Email Address is required</li>';
-	}
-	else
-	{
-		if(!filter_var($_POST["admin_email"], FILTER_VALIDATE_EMAIL))
-		{
-			$message .= '<li>Invalid Email Address</li>';
-		}
-		else
-		{
-			$formdata['admin_email'] = $_POST['admin_email'];
-		}
-	}
+    if (empty($_POST["admin_email"])) {
+        $message .= '<li>Email Address is required</li>';
+    } else {
+        if (!filter_var($_POST["admin_email"], FILTER_VALIDATE_EMAIL)) {
+            $message .= '<li>Invalid Email Address</li>';
+        } else {
+            $formdata['admin_email'] = $_POST['admin_email'];
+        }
+    }
 
-	if(empty($_POST['admin_password']))
-	{
-		$message .= '<li>Password is required</li>';
-	}
-	else
-	{
-		$formdata['admin_password'] = $_POST['admin_password'];
-	}
+    if (empty($_POST['admin_password'])) {
+        $message .= '<li>Password is required</li>';
+    } else {
+        $formdata['admin_password'] = $_POST['admin_password'];
+    }
 
-	if($message == '')
-	{
-		$data = array(
-			':admin_email'	=>	$formdata['admin_email']
-		);
+    if ($message == '') {
+        $data = array(
+            ':admin_email' => $formdata['admin_email']
+        );
 
-		$query = "
+        $query = "
 		SELECT * FROM pwc_db_admin 
         WHERE admin_email = :admin_email
 		";
 
-		$statement = $connect->prepare($query);
+        $statement = $connect->prepare($query);
 
-		$statement->execute($data);
+        $statement->execute($data);
 
-		if($statement->rowCount() > 0)
-		{
-			foreach($statement->fetchAll() as $row)
-			{
-				if($row['admin_password'] == $formdata['admin_password'])
-				{
-					$_SESSION['admin_id'] = $row['admin_id'];
-
-					header('location:/dashboard/periodcount');
-				}
-				else
-				{
-					$message = '<li>Wrong Password</li>';
-				}
-			}
-		}	
-		else
-		{
-			$message = '<li>Wrong Email Address</li>';
-		}
-	}
-
+        if ($statement->rowCount() > 0) {
+            foreach ($statement->fetchAll() as $row) {
+                if ($row['admin_password'] == $formdata['admin_password']) {
+                    $_SESSION['admin_id'] = $row['admin_id'];
+                    $_SESSION['admin_role'] = $row['Name'];
+                    $redirect_url = determine_redirect_url($row['admin_role']);
+                    header("location: $redirect_url");
+                } else {
+                    $message = '<li>Wrong Password</li>';
+                }
+            }
+        } else {
+            $message = '<li>Wrong Email Address</li>';
+        }
+    }
 }
 
 include 'header.php';
+
+function determine_redirect_url($admin_role)
+{
+    switch ($admin_role) {
+        case 'Principal':
+        case 'Admin':
+            return '/dashboard/periodcount';
+        case 'Grade 6 Sectional Head':
+            return '/dashboard/grade6';
+        case 'Grade 7 Sectional Head':
+            return '/dashboard/grade7';
+        default:
+            return '/dashboard/periodcount'; 
+    }
+}
 
 ?>
 
 <div class="d-flex align-items-center justify-content-center" style="min-height:700px;">
 
-	<div class="col-md-6">
+    <div class="col-md-6">
 
-		<?php 
-		if($message != '')
-		{
-			echo '<div class="alert alert-danger"><ul>'.$message.'</ul></div>';
-		}
-		?>
+        <?php
+        if ($message != '') {
+            echo '<div class="alert alert-danger"><ul>' . $message . '</ul></div>';
+        }
+        ?>
 
-		<div class="card">
+        <div class="card">
 
-			<div class="card-header">Teachers' Login</div>
+            <div class="card-header">Teachers' Login</div>
 
-			<div class="card-body">
+            <div class="card-body">
 
-				<form method="POST">
+                <form method="POST">
 
-					<div class="mb-3">
-						<label class="form-label">Email address</label>
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
 
-						<input type="text" name="admin_email" id="admin_email" class="form-control" />
+                        <input type="text" name="admin_email" id="admin_email" class="form-control" />
 
-					</div>
+                    </div>
 
-					<div class="mb-3">
-						<label class="form-label">Password</label>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
 
-						<input type="password" name="admin_password" id="admin_password" class="form-control" />
+                        <input type="password" name="admin_password" id="admin_password" class="form-control" />
 
-					</div>
+                    </div>
 
-					<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
 
-						<input type="submit" name="login_button" class="btn btn-primary" value="Login" />
+                        <input type="submit" name="login_button" class="btn btn-primary" value="Login" />
 
-					</div>
+                    </div>
 
-				</form>
+                </form>
 
-			</div>
+            </div>
 
-		</div>
+        </div>
 
-	</div>
+    </div>
 
 </div>
 
