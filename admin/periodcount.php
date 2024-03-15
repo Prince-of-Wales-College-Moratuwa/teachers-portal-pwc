@@ -26,7 +26,6 @@ $user_role = $_SESSION['admin_role'];
             $grades = ['6', '7', '8', '9', '10', '11'];
             $classes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
-            // Define which grades to show based on the user's role
             $allowed_grades = [];
             switch ($user_role) {
                 case 'Principal':

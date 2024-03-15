@@ -85,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="mt-4 mb-3 text-center">
                     <input type="submit" name="submit" class="btn btn-success" value="Edit" />
+                    <a href="/project-8n-kiiyada?class=<?php echo $class; ?>" class="btn btn-danger">View</a>
                 </div>
             </form>
             <?php if (!empty($message)) : ?>
