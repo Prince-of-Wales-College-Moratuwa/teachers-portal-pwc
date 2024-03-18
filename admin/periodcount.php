@@ -30,7 +30,7 @@ $user_role = $_SESSION['admin_role'];
             switch ($user_role) {
                 case 'Principal':
                 case 'Admin':
-                    $allowed_grades = $grades;
+                    $allowed_grades = array_merge($grades, ['Grade 12', 'Grade 13']);
                     break;
                 case 'Deputy Principal (6-8)':
                     $allowed_grades = ['6', '7', '8'];
@@ -38,6 +38,13 @@ $user_role = $_SESSION['admin_role'];
                 case 'Deputy Principal (9-11)':
                     $allowed_grades = ['9', '10', '11'];
                     break;
+                case 'Deputy Principal (A/L)':
+                case 'Sectional Head Science':
+                case 'Art Sectional Head':
+                case 'Commerce Sectional Head':
+                case 'Tech Sectional Head':
+                    $allowed_grades = ['Grade 12', 'Grade 13'];
+                    break;                        
                 case 'Grade 6 Sectional Head':
                     $allowed_grades = ['6'];
                     break;
@@ -57,7 +64,6 @@ $user_role = $_SESSION['admin_role'];
                     $allowed_grades = ['11'];
                     break;
             }
-            
 
             foreach ($grades as $grade) {
                 
@@ -71,7 +77,7 @@ $user_role = $_SESSION['admin_role'];
                         </div>
                     </div>
 
-                    <!-- Modal -->
+                    <!-- Modal for <?= $grade ?> -->
                     <div class="modal fade" id="classModal<?= str_replace(' ', '', $grade) ?>" tabindex="-1" role="dialog" aria-labelledby="classModalLabel<?= str_replace(' ', '', $grade) ?>" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -103,13 +109,42 @@ $user_role = $_SESSION['admin_role'];
             <?php
                 }
             }
+            
+            // Display Grade 12 button after Grade 11
+            if (in_array('Grade 12', $allowed_grades)) {
+            ?>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <a href="/admin/periodcount-12al.php" class="btn btn-primary btn-lg">Grade 12</a>
+                </div>
+            </div>
+            <?php
+            }
+
+            // Display Grade 13 button after Grade 12
+            if (in_array('Grade 13', $allowed_grades)) {
+            ?>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <a href="/admin/periodcount-13al.php" class="btn btn-primary btn-lg">Grade 13</a>
+                </div>
+            </div>
+            <?php
+            }
             ?>
         </div>
     </div>
 
     <script>
         function redirectToClass(grade) {
-            var selectedClass = document.getElementById("classSelect" + grade).value;
+            var selectedClass = '';
+            if (grade === 'Grade 12') {
+                selectedClass = document.getElementById("classSelectGrade12").value;
+            } else if (grade === 'Grade 13') {
+                selectedClass = document.getElementById("classSelectGrade13").value;
+            } else {
+                selectedClass = document.getElementById("classSelect" + grade).value;
+            }
             window.location.href = "/admin/periodcount-day.php?class=" + selectedClass;
         }
     </script>

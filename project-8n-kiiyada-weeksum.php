@@ -68,7 +68,7 @@ $end_of_week = date('d/m/Y', strtotime('friday this week'));
 <?php
 function getDayCount($class, $day) {
     global $connect;
-    $query = "SELECT COUNT(*) AS count FROM period_log_g6 WHERE class = '$class' AND $day IN ('✓', '0')";
+    $query = "SELECT COUNT(*) AS count FROM period_log_g6 WHERE class = '$class' AND $day IN ('✓', '🞷')";
     $statement = $connect->prepare($query);
     $statement->execute();
     $row = $statement->fetch(PDO::FETCH_ASSOC);

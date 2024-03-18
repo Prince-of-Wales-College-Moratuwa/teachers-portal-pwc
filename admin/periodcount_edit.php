@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="card mb-4">
         <div class="card-header">
             Edit - Grade <?php echo $class; ?>
+             <a href="/project-8n-kiiyada?class=<?php echo $class; ?>" class="btn btn-danger">View</a>
         </div>
         <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $value = $statement->fetchColumn();
                                 ?>
                                 <option value="✓" <?php if ($value == '✓') echo 'selected'; ?>>✓</option>
-                                <option value="0" <?php if ($value == '0') echo 'selected'; ?>>0</option>
+                                <option value="🞷" <?php if ($value == '🞷') echo 'selected'; ?>>🞷</option>
                                 <option value="✗" <?php if ($value == '✗') echo 'selected'; ?>>✗</option>
                             </select>
                         </div>
@@ -85,7 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="mt-4 mb-3 text-center">
                     <input type="submit" name="submit" class="btn btn-success" value="Edit" />
-                    <a href="/project-8n-kiiyada?class=<?php echo $class; ?>" class="btn btn-danger">View</a>
                 </div>
             </form>
             <?php if (!empty($message)) : ?>
@@ -93,10 +93,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php echo $message; ?>
             </div>
             <script>
-                setTimeout(function () {
-                    window.location.href = '/project-8n-kiiyada?class=<?php echo $class; ?>';
-                }, 500);
-            </script>
+    setTimeout(function () {
+        window.open('/project-8n-kiiyada?class=<?php echo $class; ?>', '_blank');
+    }, 1000);
+</script>
+
             <?php endif; ?>
 
         </div>
