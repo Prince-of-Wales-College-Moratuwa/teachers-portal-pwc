@@ -101,7 +101,11 @@ $user_role = $_SESSION['admin_role'];
     <script>
         function redirectToClass(stream) {
             var selectedClass = document.getElementById("classSelect" + stream.replace(/\s+/g, '')).value;
-            window.location.href = "/admin/periodcount-day.php?class=" + selectedClass;
+            <?php if ($user_role === 'Deputy Principal (6-8)' || $user_role === 'Deputy Principal (9-11)' || $user_role === 'Deputy Principal (A/L)' || $user_role === 'Principal') { ?>
+                window.location.href = "/project-8n-kiiyada?class=" + selectedClass;
+            <?php } else { ?>
+                window.location.href = "/admin/periodcount-day.php?class=" + selectedClass;
+            <?php } ?>
         }
     </script>
 </div>
