@@ -34,8 +34,15 @@ include 'admin-header.php';
 			</div>
 		</div>
 
-		
-
+		<div class="col-xl-3 col-md-6">
+			<div class="card bg-danger text-white mb-4">
+				<a href="/dashboard/teachers-leaving/" style="text-decoration: none; color: inherit;">
+					<div class="card-body text-white">
+						<h5 class="text-center">Teachers' Leaving</h5>
+					</div>
+				</a>
+			</div>
+		</div>
 
 	</div>
 </div>

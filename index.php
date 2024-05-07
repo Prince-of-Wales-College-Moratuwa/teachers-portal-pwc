@@ -65,13 +65,13 @@ function determine_redirect_url($admin_role)
     switch ($admin_role) {
         case 'Principal':
         case 'Admin':
-            return '/dashboard/periodcount';
+            return '/dashboard';
         case 'Grade 6 Sectional Head':
             return '/dashboard/grade6';
         case 'Grade 7 Sectional Head':
             return '/dashboard/grade7';
         default:
-            return '/dashboard/periodcount'; 
+            return '/dashboard'; 
     }
 }
 

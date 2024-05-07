@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>403 Forbidden</title>
+<meta charset="utf-8">
+    <title>Successfully Requested</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <meta http-equiv="refresh" content="5;url=/dashboard">
 
        <!-- Favicon -->
     <link href="logo-pwc.png" rel="icon">
@@ -38,40 +36,17 @@
     <!-- Template Stylesheet -->
     <link href="https://princeofwales.edu.lk/resources/css/style.css" rel="stylesheet">
 
-    <?php include 'header.php'; ?>
+    <?php include '../../header.php'; ?>
 
-
-<head>
-
-
-    <!-- 404 Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">403</h1>
-                    <h1 class="mb-4">Forbidden</h1>
-                    <p class="mb-4">You don't have permission to access this resource.</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="/">Go Back To Home</a>
-                </div>
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <i class="bi bi-check-circle display-1 text-primary"></i>
+                <h1 class="mb-4">Done!</h1>
+                <p class="mb-4">Your Application for leave Subbimitted Sucessfully</p>
+                <a class="btn btn-primary py-3 px-5 mt-2 wow zoomIn" href="/dashboard" >Back</a>
             </div>
         </div>
     </div>
-    <!-- 404 End -->
-        
-    <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://princeofwales.edu.lk/resources/lib/wow/wow.min.js"></script>
-    <script src="https://princeofwales.edu.lk/resources/lib/easing/easing.min.js"></script>
-    <script src="https://princeofwales.edu.lk/resources/lib/waypoints/waypoints.min.js"></script>
-    <script src="https://princeofwales.edu.lk/resources/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="https://princeofwales.edu.lk/resources/js/main.js"></script>
-
-    <?php include 'footer.php'; ?>
-
-</body>
-
-</html>
+</div>

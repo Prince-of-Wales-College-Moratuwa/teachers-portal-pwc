@@ -89,8 +89,8 @@
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         
-        <a class="navbar-brand ps-3" href="/admin/index.php">
-            <img src="/content/icons/main.png" alt="pwc logo" width="35px">&nbsp;&nbsp;&nbsp;Teachers Portal - Prince of Wales' College  
+        <a class="navbar-brand ps-3" href="/dashboard">
+            <img src="/content/icons/main.png" alt="pwc logo" width="35px">&nbsp;&nbsp;&nbsp;Teachers Portal - PWC  
         </a>
 
         </nav>
@@ -104,6 +104,7 @@
                          
                             <a class="nav-link <?php if ($page === 'index') echo 'active'; ?>" href="/dashboard"><img src="/content/icons/dashboard.png" width="20px">&nbsp Dashboard</a>
                             <a class="nav-link <?php if ($page === 'periodcount') echo 'active'; ?>" href="/dashboard/periodcount"><img src="/content/icons/table.png" width="20px">&nbsp Period Count</a>
+                            <a class="nav-link <?php if ($page === 'teachers-leaving') echo 'active'; ?>" href="/dashboard/teachers-leaving/"><img src="/content/icons/table.png" width="20px">&nbsp Teachers' Leaving</a>
 
                             <hr>
 
