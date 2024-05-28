@@ -104,7 +104,7 @@ $user_role = $_SESSION['admin_role'];
             <?php if ($user_role === 'Deputy Principal (6-8)' || $user_role === 'Deputy Principal (9-11)' || $user_role === 'Deputy Principal (A/L)' || $user_role === 'Principal') { ?>
                 window.location.href = "/project-8n-kiiyada?class=" + selectedClass;
             <?php } else { ?>
-                window.location.href = "/admin/periodcount-day.php?class=" + selectedClass; // Default redirection for other users
+                window.location.href = "/dashboard/periodcount-day.php?class=" + selectedClass; // Default redirection for other users
             <?php } ?>
         }
     </script>

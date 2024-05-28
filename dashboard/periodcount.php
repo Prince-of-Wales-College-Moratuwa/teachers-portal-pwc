@@ -115,7 +115,7 @@ $user_role = $_SESSION['admin_role'];
             ?>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
-                    <a href="/admin/periodcount-12al.php" class="btn btn-primary btn-lg">Grade 12</a>
+                    <a href="/dashboard/periodcount-12al.php" class="btn btn-primary btn-lg">Grade 12</a>
                 </div>
             </div>
             <?php
@@ -126,7 +126,7 @@ $user_role = $_SESSION['admin_role'];
             ?>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
-                    <a href="/admin/periodcount-13al.php" class="btn btn-primary btn-lg">Grade 13</a>
+                    <a href="/dashboard/periodcount-13al.php" class="btn btn-primary btn-lg">Grade 13</a>
                 </div>
             </div>
             <?php
@@ -148,7 +148,7 @@ $user_role = $_SESSION['admin_role'];
             <?php if ($user_role === 'Deputy Principal (6-8)' || $user_role === 'Deputy Principal (9-11)' || $user_role === 'Deputy Principal (A/L)' || $user_role === 'Principal') { ?>
                 window.location.href = "/project-8n-kiiyada?class=" + selectedClass;
             <?php } else { ?>
-                window.location.href = "/admin/periodcount-day.php?class=" + selectedClass; // Default redirection for other users
+                window.location.href = "/dashboard/periodcount-day.php?class=" + selectedClass; // Default redirection for other users
             <?php } ?>
         }
     </script>
