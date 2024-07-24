@@ -17,8 +17,6 @@ $class = $_GET['class'];
 
     <?php
 
-include 'database_connection.php';
-
 $current_day = date('D');
 if ($current_day === 'Mon') {
     $class = $_GET['class'];
