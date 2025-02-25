@@ -14,7 +14,6 @@ if(!is_admin_login())
 
 
 include 'admin-header.php';
-include 'greetings.php'; 
 
 ?>
 

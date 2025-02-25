@@ -5,6 +5,8 @@
 <title>Week Sum - Project "8න් කීයද?"</title>
 
     <?php include 'header.php';
+include 'greetings.php'; 
+
 $grade = $_GET['grade'];
     
     ?>

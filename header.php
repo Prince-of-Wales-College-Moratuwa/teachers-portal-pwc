@@ -6,11 +6,13 @@
     <title>Teachers' Portal | Prince of Wales' College</title>
 
     <!-- Favicon -->
-    <link href="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.png" rel="icon">
-    <link rel="icon" href="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://princeofwales.edu.lk/content/icons/logo-apple-touch-icon-pwc.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://princeofwales.edu.lk/content/icons/logo-android-chrome-icon-pwc.png">
-    <meta name="msapplication-TileImage" content="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.png">
+    <link href="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.webp" rel="icon">
+    <link rel="icon" href="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.webp" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://princeofwales.edu.lk/content/icons/logo-apple-touch-icon-pwc.webp">
+    <link rel="icon" type="image/webp" sizes="192x192"
+        href="https://princeofwales.edu.lk/content/icons/logo-android-chrome-icon-pwc.webp">
+    <meta name="msapplication-TileImage" content="https://princeofwales.edu.lk/content/icons/logo-70x70-pwc.webp">
     <meta name="msapplication-TileColor" content="#800000">
 
     <!-- Google Fonts -->

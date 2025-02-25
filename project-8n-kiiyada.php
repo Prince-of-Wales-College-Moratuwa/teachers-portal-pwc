@@ -5,6 +5,8 @@
     <title>Project 8න් කීයද?</title>
 
     <?php include 'header.php';
+include 'greetings.php'; 
+
     
 $class = $_GET['class'];
     
