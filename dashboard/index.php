@@ -14,12 +14,14 @@ if(!is_admin_login())
 
 
 include 'admin-header.php';
+include 'greetings.php'; 
 
 ?>
 
+
 <div class="container-fluid py-4">
 	<div class="dropdown">
-		<h1 class="mb-5"> Dashboard</h1>
+		<h1 class="mb-5"> Dashboard </h1>
 	</div>
 
 	<div class="row">
@@ -43,6 +45,10 @@ include 'admin-header.php';
 				</a>
 			</div>
 		</div>
+
+		
+		<iframe src="https://status.princeofwales.edu.lk/badge?theme=light" width="250" height="30"
+            frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
 
 	</div>
 </div>

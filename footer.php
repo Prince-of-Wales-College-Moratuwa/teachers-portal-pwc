@@ -6,6 +6,8 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Links</h4>
                     <a class="btn btn-link" href="https://princeofwales.edu.lk/" target="_blank">Main Website</a>
+                    <iframe src="https://status.princeofwales.edu.lk/badge?theme=dark" width="250" height="30" frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
+
                     
                 </div>
                 <div class="col-lg-3 col-md-6">
