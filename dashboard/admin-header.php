@@ -120,21 +120,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <iframe src="https://status.princeofwales.edu.lk/badge?theme=light" width="250" height="30"
-                        frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
-                </li>
-                <a class="nav-item nav-link <?php if ($page === 'index') echo 'active'; ?>" href="/dashboard"><img
-                        src="/content/icons/dashboard.png" width="20px">&nbsp Dashboard</a>
-                <a class="nav-item nav-link <?php if ($page === 'periodcount') echo 'active'; ?>"
-                    href="/dashboard/periodcount"><img src="/content/icons/table.png" width="20px">&nbsp Period
-                    Count</a>
-                <a class="nav-item nav-link <?php if ($page === 'teachers-leaving') echo 'active'; ?>"
-                    href="/dashboard/teachers-leaving/"><img src="/content/icons/table.png" width="20px">&nbsp Teachers'
-                    Leaving</a>
-                <hr>
-                <a class="nav-item nav-link" href="/logout"><img src="/content/icons/logout.png" width="20px">&nbsp
-                    Logout</a>
+               
             </ul>
         </div>
     </nav>
